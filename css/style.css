@@ -9,15 +9,6 @@ nav {
   text-align: center;
 }
 
-.tela {
-  display: none;
-  padding: 20px;
-  margin-top: 20px;
-  border: 1px solid #ccc;
-}
-.tela.ativa {
-  display: block;
-}
 nav a {
   margin-right: 15px;
   text-decoration: none;
@@ -40,6 +31,19 @@ ul li a:hover {
   background-color: #111111;
 }
 
+/*Parte da mudança de tela*/
+.tela {
+  display: none;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.tela.ativa {
+  display: block;
+}
+
+/*Centralizando o formulário de cadastro*/
 #cadastroEventos {
   display: flex;
   margin: auto;

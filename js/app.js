@@ -1,6 +1,7 @@
 const linksMenu = document.querySelectorAll("nav a[data-view]");
 const telas = document.querySelectorAll(".tela");
 
+//Definindo quando a tela vai ser mostrada
 function alterarTela(nomeDaTela) {
   telas.forEach((tela) => {
     if (tela.id === nomeDaTela) {
@@ -11,6 +12,7 @@ function alterarTela(nomeDaTela) {
   });
 }
 
+//Fazendo a navegação com links
 linksMenu.forEach((link) => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
@@ -21,6 +23,7 @@ linksMenu.forEach((link) => {
 
 alterarTela("dashboard");
 
+//Criando a lista de objetos para servir de base
 const eventos = [
   {
     id: 1,
@@ -51,14 +54,17 @@ const eventos = [
   },
 ];
 
+//Pegando o id do formulario
 const formulario = document.getElementById("cadastroEventos");
 
+//Função princiapl que faz rodar toda a parte de cadastro e de eventos
 function renderizarEventos() {
   const container = document.getElementById("containerEventos");
   if (!container) return;
 
   container.innerHTML = "";
 
+  //para cada evento, crie um card
   eventos.forEach((evento) => {
     const card = document.createElement("div");
     card.className = "card";
@@ -74,10 +80,12 @@ function renderizarEventos() {
         <span class="badge bg-primary">${evento.status}</span>
       </div>
     `;
+    //Somando aos cards
     container.appendChild(card);
   });
 }
 
+//Para fazer o submit dos dados do formulário
 formulario.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -106,3 +114,14 @@ formulario.addEventListener("submit", function (event) {
 });
 
 renderizarEventos();
+
+//Pegando o ID da div para fazer o dashboard
+let dashboard = document.querySelector("#dashboard");
+dashboard.innerHTML = `
+  <div class="card" style="width: 13rem;">
+    <div class="card-body text-center">
+      <h5 class="card-title">Total de eventos</h5>
+      <p class="card-text">${eventos.length}</p>
+    </div>
+  </div>
+`;
