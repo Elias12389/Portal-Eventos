@@ -1,26 +1,26 @@
 /*Navbar*/
 nav {
   display: flex;
-  list-style-type: none;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333333;
-  text-align: center;
+  align-items: center;
+  height: auto;
 }
 
 nav a {
+  display: flex;
+  align-items: center;
   margin-right: 15px;
   text-decoration: none;
-  color: blue;
-}
-
-ul li {
-  float: left;
 }
 
 ul li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  height: 100%;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -29,8 +29,8 @@ ul li a {
 
 ul li a:hover {
   background-color: #111111;
+  height: 100%;
 }
-
 /*Parte da mudança de tela*/
 .tela {
   display: none;
